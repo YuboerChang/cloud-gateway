@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coolers.cloud.cloudGateway.dao.WebLogMapper">
+  <resultMap id="BaseResultMap" type="com.coolers.cloud.cloudGateway.po.WebLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="api_id" jdbcType="VARCHAR" property="apiId" />
+    <result column="res_type" jdbcType="VARCHAR" property="resType" />
+    <result column="req_params" jdbcType="VARCHAR" property="reqParams" />
+    <result column="res_params" jdbcType="VARCHAR" property="resParams" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from web_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.coolers.cloud.cloudGateway.po.WebLog">
+    insert into web_log (id, user_id, ip, 
+      api_id, res_type, req_params, 
+      res_params, create_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{apiId,jdbcType=VARCHAR}, #{resType,jdbcType=VARCHAR}, #{reqParams,jdbcType=VARCHAR}, 
+      #{resParams,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.coolers.cloud.cloudGateway.po.WebLog">
+    update web_log
+    set user_id = #{userId,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      api_id = #{apiId,jdbcType=VARCHAR},
+      res_type = #{resType,jdbcType=VARCHAR},
+      req_params = #{reqParams,jdbcType=VARCHAR},
+      res_params = #{resParams,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, user_id, ip, api_id, res_type, req_params, res_params, create_time
+    from web_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, user_id, ip, api_id, res_type, req_params, res_params, create_time
+    from web_log
+  </select>
+</mapper>
