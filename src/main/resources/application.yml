@@ -27,7 +27,6 @@ spring:
                 key-resolver: "#{@pathKeyResolver}"
                 #key-resolver: "#{@ipKeyResolver}"
                 #key-resolver: "#{@userKeyResolver}"
-            - CustomGatewayFilter
   redis:
     host: localhost
     port: 6379

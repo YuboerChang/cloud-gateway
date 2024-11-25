@@ -1,7 +1,6 @@
-package com.coolers.cloud.cloudGateway.config;
+package com.coolers.cloud.cloudGateway.share;
 
 import com.alibaba.fastjson.JSON;
-import com.coolers.cloud.cloudGateway.constant.FormatConst;
 import com.coolers.cloud.cloudGateway.constant.RetMsgConst;
 import com.coolers.cloud.cloudGateway.constant.RetTypeConst;
 import com.coolers.cloud.cloudGateway.dto.BussinessException;
@@ -18,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 @Component
 public class GlobalExceptionResolver extends DefaultErrorAttributes {
@@ -30,7 +30,7 @@ public class GlobalExceptionResolver extends DefaultErrorAttributes {
         logger.error("user " + BaseUtil.getUserIdByBody(reqWrapper.getContentAsString()) + " request failure", ex);
         BaseRes res = buildRes(ex);
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        response.setCharacterEncoding(FormatConst.UTF8);
+        response.setCharacterEncoding(String.valueOf(StandardCharsets.UTF_8));
         try {
             response.getWriter().write(JSON.toJSONString(res));
         } catch (IOException e) {

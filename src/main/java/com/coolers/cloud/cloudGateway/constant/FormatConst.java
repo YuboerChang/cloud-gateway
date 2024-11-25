@@ -18,9 +18,5 @@ public class FormatConst {
      * 时区，CTT，即亚洲/上海
      */
     public static final String CTT = "CTT";
-    /**
-     * 编码格式
-     */
-    public static final String UTF8 = "UTF-8";
 
 }

@@ -4,11 +4,11 @@ import com.coolers.cloud.cloudGateway.po.WebLog;
 import java.util.List;
 
 public interface WebLogMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String id);
 
     int insert(WebLog record);
 
-    WebLog selectByPrimaryKey(Integer id);
+    WebLog selectByPrimaryKey(String id);
 
     List<WebLog> selectAll();
 
