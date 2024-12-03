@@ -54,7 +54,6 @@ public class CustomGatewayFilter implements GlobalFilter, Ordered {
         if (HttpMethod.GET.name().equals(request.getMethod().name())) {
             webLog.setReqParams(request.getQueryParams().toString());
         } else if (HttpMethod.POST.name().equals(request.getMethod().name())) {
-            // 这个地方Mono有Bug，先不管
 //            ServerRequest sr = ServerRequest.create(exchange, HandlerStrategies.withDefaults().messageReaders());
 //            sr.bodyToMono(String.class).flatMap(v -> {
 //                webLog.setReqParams(v);

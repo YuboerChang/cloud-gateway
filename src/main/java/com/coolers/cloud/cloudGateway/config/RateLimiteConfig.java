@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 @Configuration
 public class RateLimiteConfig {
+    private static final String USER_ID_KEY = "userId";
 
     /**
      * 接口限流：根据请求路径限流
@@ -38,7 +39,7 @@ public class RateLimiteConfig {
      */
     @Bean
     public KeyResolver userKeyResolver() {
-        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst(BaseConst.USER_ID_KEY))
+        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst(USER_ID_KEY))
         );
     }
 }

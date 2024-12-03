@@ -29,17 +29,4 @@ public class BaseUtil {
         return collection != null && !collection.isEmpty();
     }
 
-    /**
-     * 通过上送的req_body截取出userId
-     */
-    public static String getUserIdByBody(String params) {
-        String[] ps = params.split("&");
-        for (String p : ps) {
-            String[] sArr = p.split("=");
-            if (sArr.length > 1 && BaseConst.USER_ID_KEY.equals(sArr[0])) {
-                return sArr[1];
-            }
-        }
-        return "";
-    }
 }
