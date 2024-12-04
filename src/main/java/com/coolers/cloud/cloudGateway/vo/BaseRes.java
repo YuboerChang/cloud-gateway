@@ -1,6 +1,6 @@
 package com.coolers.cloud.cloudGateway.vo;
 
-import com.coolers.cloud.cloudGateway.constant.BaseConst;
+import com.coolers.cloud.cloudShare.constant.BaseConst;
 import lombok.Data;
 
 @Data

@@ -1,6 +1,5 @@
 package com.coolers.cloud.cloudGateway.config;
 
-import com.coolers.cloud.cloudGateway.constant.BaseConst;
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

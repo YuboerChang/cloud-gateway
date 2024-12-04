@@ -1,6 +1,6 @@
 package com.coolers.cloud.cloudGateway.share;
 
-import com.coolers.cloud.cloudGateway.dto.BusinessException;
+import com.coolers.cloud.cloudShare.dto.BusinessException;
 import com.coolers.cloud.cloudGateway.vo.BaseErrorRes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

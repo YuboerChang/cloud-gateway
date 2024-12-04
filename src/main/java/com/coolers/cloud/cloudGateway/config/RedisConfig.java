@@ -1,6 +1,6 @@
 package com.coolers.cloud.cloudGateway.config;
 
-import com.coolers.cloud.cloudGateway.constant.FormatConst;
+import com.coolers.cloud.cloudShare.constant.FormatConst;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
